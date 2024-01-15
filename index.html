@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text repeat</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h1>Text repeat</h1>
+    <div id="app">
+        <input type="text" v-model="text" placeholder="Some text">
+        <input type="number" v-model.number="howMany" placeholder="How many times">
+        <button class="btn btn-primary" @click="repeat(text, howMany)">Repeat</button>
+        <span class="bg-danger">{{errorMessage}}</span>
+
+        <div v-if="output">
+            <ol>
+                <li v-for="item in output">{{item}}</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
